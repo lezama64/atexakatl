@@ -1,0 +1,702 @@
+/* ===== RESET Y ESTILOS GENERALES ===== */
+/* Reset básico que afecta a todos los elementos */
+* {
+    margin: 0;           /* Elimina márgenes por defecto del navegador */
+    padding: 0;          /* Elimina paddings por defecto */
+    box-sizing: border-box; /* Cambia el modelo de caja */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ===== ESTRUCTURA PRINCIPAL ===== */
+/* Contenedor principal */
+.contenedor-principal {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== HEADER - Color rojo ===== */
+.header {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+}
+
+/* Navegación principal */
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.navegacion a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navegacion a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* ===== SISTEMA DE AUTENTICACIÓN ===== */
+/* Contenedor de links de autenticación */
+.auth-links {
+    display: flex;
+    gap: 1rem;
+    margin-left: 2rem;
+    padding-left: 2rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Botones de autenticación base */
+.auth-btn {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid;
+    color: white;
+}
+
+/* Botón Log in (sin borde por defecto) */
+.login-btn {
+    border-color: transparent;
+    background: transparent;
+}
+
+.login-btn:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Botones Register y Dashboard (con borde visible) */
+.register-btn,
+.dashboard-btn {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+}
+
+.register-btn:hover,
+.dashboard-btn:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ===== CUERPO PRINCIPAL - Color azul ===== */
+.cuerpo {
+    background-color: #143957;
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.contenido {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    flex: 3;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.sidebar {
+    background-color: #e7f5ff;
+    padding: 2rem;
+    border-radius: 8px;
+    flex: 1;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Subcontenedores dentro del cuerpo */
+.secciones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.seccion {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #0f2a41;
+    flex: 1;
+}
+
+/* ===== FOOTER - Color verde ===== */
+.footer {
+    background-color: #51cf66;
+    color: white;
+    padding: 1.5rem 2rem;
+}
+
+.info-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enlaces-footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+}
+
+.enlaces-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ===== PÁGINA DE LOGIN ===== */
+.login-container {
+    background-color: #073153;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.login-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header h1 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.session-status {
+    background-color: #e7f5ff;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #4dabf7;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+.form-input {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #4dabf7;
+}
+
+.password-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.forgot-password {
+    color: #4dabf7;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.checkbox {
+    width: 1rem;
+    height: 1rem;
+}
+
+.checkbox-label {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.form-actions {
+    margin-top: 1rem;
+}
+
+.login-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-button:hover {
+    background-color: #ff5252;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.register-link a {
+    color: #4dabf7;
+    text-decoration: none;
+    margin-left: 0.25rem;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===== COMPONENTES DEL DASHBOARD ===== */
+/* Navegación específica del dashboard */
+.navegacion-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Links de navegación */
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link.active {
+    border-bottom-color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Sistema de dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-arrow {
+    margin-left: 0.5rem;
+    font-size: 0.7rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    min-width: 160px;
+}
+
+.dropdown-right {
+    right: 0;
+}
+
+.dropdown-left {
+    left: 0;
+}
+
+.dropdown-top {
+    bottom: 100%;
+}
+
+.dropdown-content {
+    padding: 0.5rem 0;
+}
+
+.dropdown-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown-link:hover {
+    background-color: #f5f5f5;
+}
+
+/* Navegación responsive */
+.responsive-menu {
+    display: none;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.responsive-links {
+    padding: 1rem 0;
+}
+
+.responsive-nav-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: #333;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: all 0.3s;
+}
+
+.responsive-nav-link:hover {
+    background-color: #f5f5f5;
+    border-left-color: #ddd;
+}
+
+.responsive-nav-link.active {
+    border-left-color: #ff6b6b;
+    background-color: #fff5f5;
+    color: #ff6b6b;
+}
+
+.responsive-auth {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.user-info {
+    margin-bottom: 1rem;
+}
+
+.user-name {
+    font-weight: bold;
+    color: #050101;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: #050000;
+}
+
+.responsive-auth-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* Utilidades generales */
+.max-w-7xl {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+/* ===== MENÚ LATERAL DESLIZABLE ===== */
+/* Botón para abrir menú lateral en header */
+.user-menu-toggle {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    color: #333;
+    font-weight: 600;
+}
+
+.user-menu-toggle:hover {
+    background-color: #f0f8ff;
+    color: #4dabf7;
+}
+
+/* Overlay para fondo oscuro */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.overlay.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menú lateral que se desliza desde la derecha */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: rgb(51, 100, 206);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Estado activo del menú lateral (visible) */
+.menu-lateral.activo {
+    right: 0;
+}
+
+/* Botón de cerrar del menú lateral */
+.menu-cerrar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem;
+}
+
+/* Estilos del botón de cerrar */
+.menu-cerrar button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s;
+}
+
+/* Efecto hover en botón de cerrar */
+.menu-cerrar button:hover {
+    color: #ff6b6b;
+}
+
+/* Sección de perfil del menú lateral */
+.menu-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Icono de usuario en el menú lateral */
+.icono-usuario {
+    font-size: 4rem;
+    color: #4dabf7;
+    margin-bottom: 1rem;
+}
+
+/* Título del perfil */
+.menu-perfil h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Enlaces de usuario */
+.user-links {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+/* Navegación del menú lateral */
+.menu-navegacion {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+/* Elementos individuales del menú lateral */
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    font-size: 1.1rem;
+    visibility: visible;    /* Asegúrate que sea visible */
+    opacity: 1; 
+}
+
+/* Efecto hover en elementos del menú */
+.menu-item:hover {
+    background-color: #f0f8ff;
+    color: #4dabf7;
+}
+
+/* Iconos dentro de los elementos del menú */
+.menu-item i {
+    margin-right: 1rem;
+    font-size: 1.3rem;
+    width: 20px;
+    text-align: center;
+}
+
+/* Formulario de logout */
+.logout-form {
+    display: contents;
+}
+
+/* ===== MEDIA QUERIES - RESPONSIVE DESIGN ===== */
+/* Responsive para tablets y móviles (768px y menos) */
+@media (max-width: 768px) {
+    /* Header responsive */
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .navegacion {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .auth-links {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Cuerpo responsive */
+    .cuerpo {
+        flex-direction: column;
+    }
+    
+    .secciones {
+        flex-direction: column;
+    }
+    
+    /* Footer responsive */
+    .info-footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .enlaces-footer {
+        display: flex;
+        gap: 1rem;
+    }
+    
+    .enlaces-footer a {
+        margin-left: 0;
+    }
+    
+    /* Login responsive */
+    .login-container {
+        padding: 1rem;
+    }
+    
+    .login-card {
+        padding: 1.5rem;
+    }
+    
+    .password-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    /* Dashboard responsive - ocultar navegación desktop */
+    .navegacion-links,
+    .auth-links {
+        display: none;
+    }
+    
+    .responsive-menu {
+        display: block;
+    }
+}
+
+/* Mostrar navegación desktop en pantallas grandes */
+@media (min-width: 769px) {
+    .responsive-menu {
+        display: none !important;
+    }
+}
+
+/* Responsive para móviles pequeños (480px y menos) */
+@media (max-width: 480px) {
+    .menu-lateral {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .user-menu-toggle span {
+        display: none;
+    }
+}
