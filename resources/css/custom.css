@@ -680,7 +680,21 @@ body {
     .responsive-menu {
         display: block;
     }
+
 }
+
+.volver {
+
+    color: white; /* Texto blanco */
+
+}
+
+.volver:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+    color: white;
+    text-decoration: none;
+}
+
 
 /* Mostrar navegación desktop en pantallas grandes */
 @media (min-width: 769px) {
@@ -699,4 +713,72 @@ body {
     .user-menu-toggle span {
         display: none;
     }
+}
+
+
+/* =============================================
+    ESTILO DEL MENU DESPLEGABLE DE RUTAS Y DESTINOS
+   ============================================= */
+/* Estilos para el menú desplegable de Rutas */
+.menuDes-container {
+    position: relative;
+    display: inline-block;
+}
+
+.boton-menuDes {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+}
+
+.boton-menuDes:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menuDes-opciones {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.menuDes-opciones a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color 0.3s;
+}
+
+.menuDes-opciones a:last-child {
+    border-bottom: none;
+}
+
+.menuDes-opciones a:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
+
+.menuDes-opciones i {
+    width: 16px;
+    text-align: center;
+    color: #007bff;
+}
+
+/* Mostrar menú al hacer hover */
+.menuDes-container:hover .menuDes-opciones {
+    display: block;
 }

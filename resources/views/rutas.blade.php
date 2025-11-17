@@ -33,7 +33,30 @@
             @include('layouts.header')
 
                 <main class="cuerpo">
-                    <h1>aqui estan las rutas</h1>
+                    
+                        @if($rutas->count() > 0)
+                            @foreach($rutas as $ruta)
+                                <div class="ruta">
+                                    <h2>
+                                        <a href="{{ route('ruta.show', $ruta->idRuta) }}" style="text-decoration: none; color: inherit;">
+                                            {{ $ruta->nombre }}
+                                        </a>
+                                    </h2>
+                                    <p><strong>Descripción:</strong> {{ $ruta->descripcion }}</p>
+                                    <p><strong>Dificultad:</strong> {{ $ruta->dificultad }}</p>
+                                    <p><strong>Duración:</strong> {{ $ruta->duracion }}</p>
+                                    <p class="precio"><strong>Precio:</strong> ${{ number_format($ruta->precio, 0) }}</p>
+                                    
+                                    {{-- Agrega este botón --}}
+                                    <a href="{{ route('ruta.show', $ruta->idRuta) }}" style="background: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block;">
+                                        Ver detalles completos
+                                    </a>
+                                </div>
+                            @endforeach
+                        @else
+                            <p>No hay rutas disponibles.</p>
+                        @endif
+                    
                 </main>
 
 

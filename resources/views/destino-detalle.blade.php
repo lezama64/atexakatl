@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
         @vite(['resources/css/custom.css'])
+
         @vite(['resources/js/custom.js'])
         <!-- Styles -->
         <style>
@@ -28,30 +29,24 @@
         <body>
             <div class="contenedor-principal">
                 <!--header -->
+            
             @include('layouts.header')
-
                 <main class="cuerpo">
-                    
-                        @if($destinos->count() > 0)
-                            @foreach($destinos as $destino)
-                                <div class="destino">
-                                    <h2>
-                                        <a href="{{ route('destino.show', $destino->idDestino) }}" style="text-decoration: none; color: inherit;">
-                                            {{ $destino->nombre }}
-                                        </a>
-                                    </h2>
-                                    <p><strong>Descripción:</strong> {{ $destino->descripcion }}</p>
-                                    <p><strong>ubicacion:</strong> {{ $destino->ubicacion }}</p>
-                                    
-                                    {{-- Agrega este botón --}}
-                                    <a href="{{ route('destino.show', $destino->idDestino) }}" style="background: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; display: inline-block;">
-                                        Ver detalles completos
-                                    </a>
-                                </div>
-                            @endforeach
-                        @else
-                            <p>No hay destinos disponibles.</p>
-                        @endif
+                        <a href="{{ route('destinos') }}" class="volver">← Volver a todas las rutas</a>
+                        
+                        <div class="destino-header">
+                            <h1>{{ $destino->nombre }}</h1>
+                            
+                        </div>
+
+                        <div class="destino-info">
+                            <h3>Descripción</h3>
+                            <p>{{ $destino->descripcion }}</p>
+
+                            <h3>Ubicacion</h3>
+                            <p>{{ $destino->ubicacion }}</p>
+
+                        </div>
                     
                 </main>
 
