@@ -4,6 +4,7 @@ use App\Http\Controllers\DestinoController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RutaController;
+use App\Http\Controllers\ReservaController;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -23,6 +24,8 @@ Route::get('/welcome', function () {
     Route::get('/destino/{id}', [DestinoController::class, 'show'])->name('destino.show');
 
 
+    Route::resource('reservas', ReservaController::class);
+
 /*
     Route::get('/rutas', function () {
         return view('rutas');
@@ -40,27 +43,90 @@ Route::get('/welcome', function () {
 
 
 //vistas para el usuario
+/*
     Route::get('/mis_reservas', function () {
         return view('mis-reservas');
     })->name('mis-reservas');
+
+
+    Route::get('/mis-reservas', function () {
+    return view('mis-reservas');
+})->middleware(['auth', 'verified'])->name('mis-reservas');
+*/
+
+Route::get('/mis-reservas', [ReservaController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('mis-reservas');
 //////////////////////////////////////////
 
 
-
+/*
 //vistas para el admin
     Route::get('/reservaciones_confirmadas', function () {
         return view('reservaciones-confirmadas');
     })->name('reservaciones-confirmadas');
+*/
 
-    Route::get('/reservaciones_por_confirmar', function () {
-        return view('reservaciones-por-confirmar');
-    })->name('reservaciones-por-confirmar');
+
 /////////////////////////////////////////////////
 
 
 
+// ✅ VISTAS PROTEGIDAS SOLO PARA ADMIN
+
+Route::middleware(['admin'])->group(function () {
 
 
+
+            Route::get('/reservaciones_confirmadas', [ReservaController::class, 'confirmadas'])
+        ->name('reservaciones-confirmadas');
+
+        Route::get('/reservaciones_por_confirmar', [ReservaController::class, 'pendientes'])
+        ->name('reservaciones-por-confirmar');
+
+    Route::patch('/reservas/{id}/actualizar-estado', [ReservaController::class, 'actualizarEstado'])
+        ->name('reservas.actualizar-estado');
+
+            Route::delete('/reservas/{id}', [ReservaController::class, 'destroy'])
+        ->name('reservas.destroy');
+
+
+            // ✅ NUEVAS RUTAS PARA EDITAR
+    Route::get('/reservas/{id}/edit', [ReservaController::class, 'edit'])
+        ->name('reservas.edit');
+    
+    Route::put('/reservas/{id}', [ReservaController::class, 'update'])
+        ->name('reservas.update');
+
+    Route::delete('/reservas/{id}', [ReservaController::class, 'destroy'])
+        ->name('reservas.destroy');
+});
+
+/*
+Route::middleware(['admin'])->group(function () {
+    Route::get('/reservaciones_confirmadas', function () {
+        return view('reservaciones-confirmadas');
+    })->name('reservaciones-confirmadas');
+
+    Route::get('/reservaciones_por_confirmar', [ReservaController::class, 'pendientes'])
+        ->name('reservaciones-por-confirmar');
+});
+*/
+
+
+//////////Reservas/////////////////////////
+Route::middleware(['auth'])->group(function () {
+    // Ruta para crear reserva desde una ruta específica
+    Route::get('/rutas/{ruta}/reservar', [ReservaController::class, 'create'])->name('reservas.create');
+    Route::post('/reservas', [ReservaController::class, 'store'])->name('reservas.store');
+
+        Route::get('/reservas/{id}/edit', [ReservaController::class, 'edit'])
+        ->name('reservas.edit');
+    
+    Route::put('/reservas/{id}', [ReservaController::class, 'update'])
+        ->name('reservas.update');
+});
+///////////////////////////////////////////////////////////////////////////////////////////////
 
 
 

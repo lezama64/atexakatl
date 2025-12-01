@@ -1,0 +1,58 @@
+/* ===== HEADER ===== */
+.header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-light);
+}
+
+.header h1 {
+    font-size: 1.8rem;
+}
+
+/* ===== NAVEGACIÓN PRINCIPAL ===== */
+.navegacion {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.navegacion a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin-left: var(--spacing-md);
+    padding: var(--spacing-xs);
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-normal);
+}
+
+.navegacion a:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+/* ===== COMPONENTES DEL DASHBOARD ===== */
+.navegacion-links {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.nav-link {
+    color: var(--color-white);
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-normal);
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link.active {
+    border-bottom-color: var(--color-white);
+    background-color: rgba(255, 255, 255, 0.1);
+}

@@ -9,80 +9,39 @@ class Reserva extends Model
 {
     use HasFactory;
 
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'reservas';
+    // Especificar el nombre de la tabla si es diferente
+    protected $table = 'reservas'; // o el nombre exacto de tu tabla
 
-    /**
-     * The primary key for the model.
-     *
-     * @var string
-     */
+    // Especificar la clave primaria
     protected $primaryKey = 'idReserva';
 
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     *
-     * @var bool
-     */
-    public $incrementing = true;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var list<string>
-     */
+    // Campos que se pueden llenar masivamente
     protected $fillable = [
         'fechaReserva',
         'estado',
         'noPersonas',
         'whatsapp',
         'comentarios',
-        'usuariosidUsuario',
+        'usuariosid',
         'rutasidRuta'
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
+    protected $casts = [
+        'fechaReserva' => 'date',
+    ];
+
+    // Si quieres desactivar los timestamps
+    public $timestamps = false;
+
+    // Relaciones (ajusta según tus modelos)
+    public function usuario()
     {
-        return [
-            'fechaReserva' => 'date',
-            'noPersonas' => 'integer',
-            'whatsapp' => 'integer',
-            'usuariosidUsuario' => 'integer',
-            'rutasidRuta' => 'integer',
-            'created_at' => 'datetime',
-            'updated_at' => 'datetime',
-        ];
+        return $this->belongsTo(User::class, 'usuariosid');
     }
 
-    /**
-     * The data type of the auto-incrementing ID.
-     *
-     * @var string
-     */
-    protected $keyType = 'int';
-
-    /**
-     * Relación con el modelo Usuario
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class, 'usuariosid', 'id');
-    }
-
-    /**
-     * Relación con el modelo Ruta
-     */
     public function ruta()
     {
-        return $this->belongsTo(Ruta::class, 'rutasidRuta', 'idRuta');
+        return $this->belongsTo(Ruta::class, 'rutasidRuta');
     }
 }
+

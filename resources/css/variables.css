@@ -1,0 +1,46 @@
+/* ===== VARIABLES Y CONFIGURACIÓN GLOBAL ===== */
+:root {
+    /* Colores principales */
+    --color-primary: #045e0b;/*color header*/
+    --color-secondary: #01070e;/*color de fondo*/
+    --color-accent: #045e0b;/*color footer*/
+    --color-dark-blue: #edeee7;
+    --color-light-blue: #aa123f;/*barra lateral derecha*/
+    
+    /* Colores neutrales */
+    --color-white: #ffffff;
+    --color-gray-light: #f8f9fa;    
+    --color-gray-medium: #6c757d;
+    --color-gray-dark: #333333;
+    
+    /* Espaciados */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    
+    /* Bordes */
+    --border-radius: 8px;
+    --border-radius-sm: 4px;
+    
+    /* Sombras */
+    --shadow-light: 0 2px 5px rgba(0,0,0,0.1);
+    --shadow-medium: 0 2px 10px rgba(0,0,0,0.1);
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+}
+
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}

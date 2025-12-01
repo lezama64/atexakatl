@@ -64,3 +64,4 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!cerrarMenu) console.error('   - No se encontró #cerrarMenu');
     }
 });
+

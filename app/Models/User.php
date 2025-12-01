@@ -22,7 +22,10 @@ class User extends Authenticatable
         'email',
         'numeroTelefono',
         'password',
-        'rol',
+    ];
+
+    protected $attributes = [
+        'rol' => 'user'
     ];
 
     /**

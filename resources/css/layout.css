@@ -1,0 +1,67 @@
+/* ===== ESTRUCTURA PRINCIPAL ===== */
+.contenedor-principal {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== CUERPO PRINCIPAL ===== */
+.cuerpo {
+    background-color: var(--color-secondary);
+    flex: 1;
+    padding: var(--spacing-lg);
+    display: flex;
+    gap: var(--spacing-lg);
+}
+
+.contenido {
+    background-color: var(--color-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    flex: 3;
+    box-shadow: var(--shadow-medium);
+}
+
+.sidebar {
+    background-color: var(--color-light-blue);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    flex: 1;
+    box-shadow: var(--shadow-medium);
+}
+
+.secciones {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.seccion {
+    background-color: var(--color-gray-light);
+    padding: var(--spacing-sm);
+    border-radius: 6px;
+    border-left: 4px solid #0f2a41;
+    flex: 1;
+}
+
+/* ===== UTILIDADES GENERALES ===== */
+.max-w-7xl {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 var(--spacing-sm);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.volver {
+    color: var(--color-white);
+}
+
+.volver:hover {
+    background-color: #0056b3;
+    color: var(--color-white);
+    text-decoration: none;
+}

@@ -1,0 +1,137 @@
+/* ===== MENÚ LATERAL DESLIZABLE ===== */
+.user-menu-toggle {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    cursor: pointer;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 6px;
+    transition: background-color var(--transition-normal);
+    color: var(--color-gray-dark);
+    font-weight: 600;
+}
+
+.user-menu-toggle:hover {
+    background-color: #f0f8ff;
+    color: #4dabf7;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+}
+
+.overlay.activo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background-color: rgb(51, 100, 206);
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    transition: right var(--transition-normal);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-lateral.activo {
+    right: 0;
+}
+
+.menu-cerrar {
+    display: flex;
+    justify-content: flex-end;
+    padding: var(--spacing-sm);
+}
+
+.menu-cerrar button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #555;
+    transition: color var(--transition-normal);
+}
+
+.menu-cerrar button:hover {
+    color: var(--color-primary);
+}
+
+.menu-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg) var(--spacing-sm);
+    border-bottom: 1px solid #eee;
+}
+
+.icono-usuario {
+    font-size: 4rem;
+    color: #4dabf7;
+    margin-bottom: var(--spacing-sm);
+}
+
+.menu-perfil h3 {
+    color: var(--color-gray-dark);
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+}
+
+.user-links {
+    width: 100%;
+    margin-top: var(--spacing-xs);
+}
+
+.menu-navegacion {
+    padding: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    flex: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm);
+    text-decoration: none;
+    color: var(--color-gray-dark);
+    border-radius: 6px;
+    transition: background-color var(--transition-normal);
+    font-size: 1.1rem;
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu-item:hover {
+    background-color: #f0f8ff;
+    color: #4dabf7;
+}
+
+.menu-item i {
+    margin-right: var(--spacing-sm);
+    font-size: 1.3rem;
+    width: 20px;
+    text-align: center;
+}
+
+.logout-form {
+    display: contents;
+}

@@ -1,0 +1,22 @@
+/* ===== FOOTER ===== */
+.footer {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: var(--spacing-md) var(--spacing-lg);
+}
+
+.info-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.enlaces-footer a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin-left: var(--spacing-md);
+}
+
+.enlaces-footer a:hover {
+    text-decoration: underline;
+}

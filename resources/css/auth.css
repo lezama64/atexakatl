@@ -1,0 +1,42 @@
+/* ===== SISTEMA DE AUTENTICACIÓN ===== */
+.auth-links {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-left: var(--spacing-lg);
+    padding-left: var(--spacing-lg);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.auth-btn {
+    display: inline-block;
+    padding: var(--spacing-xs) 1.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+    border: 1px solid;
+    color: var(--color-white);
+}
+
+.login-btn {
+    border-color: transparent;
+    background: transparent;
+}
+
+.login-btn:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.register-btn,
+.dashboard-btn {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: transparent;
+}
+
+.register-btn:hover,
+.dashboard-btn:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.15);
+}

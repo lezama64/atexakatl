@@ -1,0 +1,110 @@
+/* ===== SISTEMA DE DROPDOWN ===== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-arrow {
+    margin-left: var(--spacing-xs);
+    font-size: 0.7rem;
+}
+
+.dropdown-menu {
+    position: absolute;
+    background: var(--color-white);
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-medium);
+    z-index: 1000;
+    min-width: 160px;
+}
+
+.dropdown-right {
+    right: 0;
+}
+
+.dropdown-left {
+    left: 0;
+}
+
+.dropdown-top {
+    bottom: 100%;
+}
+
+.dropdown-content {
+    padding: var(--spacing-xs) 0;
+}
+
+.dropdown-link {
+    display: block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    color: var(--color-gray-dark);
+    text-decoration: none;
+    transition: background-color var(--transition-normal);
+}
+
+.dropdown-link:hover {
+    background-color: #f5f5f5;
+}
+
+/* ===== MENÚ DESPLEGABLE DE RUTAS Y DESTINOS ===== */
+.menuDes-container {
+    position: relative;
+    display: inline-block;
+}
+
+.boton-menuDes {
+    color: var(--color-white);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color var(--transition-normal);
+}
+
+.boton-menuDes:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menuDes-opciones {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--color-white);
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: var(--border-radius-sm);
+    overflow: hidden;
+}
+
+.menuDes-opciones a {
+    color: var(--color-gray-dark);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: background-color var(--transition-normal);
+}
+
+.menuDes-opciones a:last-child {
+    border-bottom: none;
+}
+
+.menuDes-opciones a:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+}
+
+.menuDes-opciones i {
+    width: 16px;
+    text-align: center;
+    color: #007bff;
+}
+
+.menuDes-container:hover .menuDes-opciones {
+    display: block;
+}

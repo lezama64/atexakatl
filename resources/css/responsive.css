@@ -1,0 +1,141 @@
+/* ===== NAVEGACIÓN RESPONSIVE ===== */
+.responsive-menu {
+    display: none;
+    background: var(--color-white);
+    border-top: 1px solid #eee;
+}
+
+.responsive-links {
+    padding: var(--spacing-sm) 0;
+}
+
+.responsive-nav-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    color: var(--color-gray-dark);
+    text-decoration: none;
+    border-left: 4px solid transparent;
+    transition: all var(--transition-normal);
+}
+
+.responsive-nav-link:hover {
+    background-color: #f5f5f5;
+    border-left-color: #ddd;
+}
+
+.responsive-nav-link.active {
+    border-left-color: var(--color-primary);
+    background-color: #fff5f5;
+    color: var(--color-primary);
+}
+
+.responsive-auth {
+    padding: var(--spacing-sm) 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.user-info {
+    margin-bottom: var(--spacing-sm);
+}
+
+.user-name {
+    font-weight: bold;
+    color: #050101;
+}
+
+.user-email {
+    font-size: 0.9rem;
+    color: #050000;
+}
+
+.responsive-auth-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+/* ===== MEDIA QUERIES - RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .navegacion {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .auth-links {
+        margin-left: 0;
+        padding-left: 0;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        padding-top: var(--spacing-sm);
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .cuerpo {
+        flex-direction: column;
+    }
+    
+    .secciones {
+        flex-direction: column;
+    }
+    
+    .info-footer {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        text-align: center;
+    }
+    
+    .enlaces-footer {
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+    
+    .enlaces-footer a {
+        margin-left: 0;
+    }
+    
+    .login-container {
+        padding: var(--spacing-sm);
+    }
+    
+    .login-card {
+        padding: var(--spacing-md);
+    }
+    
+    .password-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-xs);
+    }
+    
+    .navegacion-links,
+    .auth-links {
+        display: none;
+    }
+    
+    .responsive-menu {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    .responsive-menu {
+        display: none !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-lateral {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .user-menu-toggle span {
+        display: none;
+    }
+}
